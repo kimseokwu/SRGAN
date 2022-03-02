@@ -59,10 +59,10 @@ def train_model(dataloader, generator, discriminator, feature_extractor, epochs,
             optimizer_D.step()
             
             # print loss
-            
+
             print(f'EPOCH: {epoch + 1}, BATCH: {i + 1}, Discriminator loss: {discriminator_loss.item()}, Generator loss: {generator_loss.item()}')
             
-            if epoch % 5 == 0:
+            if (epoch+1) % 5 == 0:
                 torch.save(generator.state_dict(), f'saved_model/generator_{epoch + 1}.pth')
                 torch.save(discriminator.state_dict(), f'saved_model/discriminator_{epoch + 1}.pth')
 

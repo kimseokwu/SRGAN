@@ -10,7 +10,6 @@ EPOCHS = 1
 BATCH_SIZE = 1
 
 # initiate model
-
 discriminator =  model.Discriminator()
 generator = model.Generator()
 feature_extractor = loss.VGG()

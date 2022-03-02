@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
-from torchvision.models.vgg import vgg16
+from torchvision.models.vgg import vgg19
 
 class VGG(nn.Module):
     def __init__(self):
         super(VGG, self).__init__()
-        vgg = vgg16(pretrained=True)
+        vgg = vgg19(pretrained=True)
         self.feature_extractor = nn.Sequential(*list(vgg.features.children())[:18])
     
     def forward(self, x):
