@@ -6,7 +6,7 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 
 
-def train_model(dataloader, generator, discriminator, feature_extractor, epochs, learning_rate):
+def train_model(dataloader, generator, discriminator, feature_extractor, epochs, learning_rate=1e-4):
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     
     generator.to(device)
