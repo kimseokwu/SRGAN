@@ -15,12 +15,12 @@ def train_model(dataloader, generator, discriminator, feature_extractor, epochs,
     for epoch in range(epochs):
         for imgs in dataloader:
             
-            LR = imgs['LR']
-            HR = imgs['HR']
+            LR = imgs['LR'].to(device)
+            HR = imgs['HR'].to(device)
             
             # discriminator labels
-            real = torch.tensor(()).new_ones((LR.size()[0], *discriminator.output_shape), requires_grad=False)
-            fake = torch.tensor(()).new_zeros((LR.size()[0], *discriminator.output_shape), requires_grad=False)
+            real = torch.tensor(()).new_ones((LR.size()[0], *discriminator.output_shape), requires_grad=False).to(device)
+            fake = torch.tensor(()).new_zeros((LR.size()[0], *discriminator.output_shape), requires_grad=False).to(device)
 
             
             # Generator 학습
