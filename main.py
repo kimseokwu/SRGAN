@@ -14,7 +14,7 @@ lr = 0.001
 
 discriminator =  model.Discriminator()
 generator = model.Generator()
-feature_extractor = utils.loss.VGG()
+feature_extractor = loss.VGG()
 
 # load dataloader
 train_datasets = dataloader.ImageDataset(FILE_PATH, (512, 512))
